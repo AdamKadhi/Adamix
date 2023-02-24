@@ -1,0 +1,409 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;0,1000;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900;1,1000&display=swap');* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+  font-family: 'Mulish', sans-serif;
+}
+body{
+  background-color: black;
+  overflow-x: hidden;
+}
+nav{
+  position: fixed;
+  width: 100%;
+  height: fit-content;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 20px;
+  background: transparent;
+  color: #f0f8ff;
+  transition:  0.3s ease-in-out;
+  z-index:1;
+  top: 0;
+}
+.nav_bar.scroll {
+  background-color: black;
+}
+.left_nav_bar{
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+.left_nav_bar h1{
+  font-size: 28px;
+  font-weight: 800;
+  cursor: pointer;
+  color: red;
+}
+.left_nav_bar ul{
+  list-style: none;
+  display: flex;
+  gap: 15px;
+  font-size: 17px;
+}
+.left_nav_bar ul li{
+  cursor: pointer;
+}
+.left_nav_bar ul li:hover{
+  color: rgb(219, 219, 219);
+}
+.right_nav_bar{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.right_nav_bar i{
+  color: white;
+  font-size: 30px;
+  cursor: pointer;
+}
+
+.search-box {
+  width: fit-content;
+  height: fit-content;
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.input-search {
+  height: 30px;
+  width: 30px;
+  border-style: none;
+  padding: 10px;
+  font-size: 18px;
+  letter-spacing: 2px;
+  outline: none;
+  border-radius: 25px;
+  transition: all 0.5s ease-in-out;
+  background-color: transparent;
+  padding-right: 40px;
+  color: white;
+}
+.input-search::placeholder {
+  color: rgba(255, 255, 255, .5);
+  font-size: 18px;
+  letter-spacing: 2px;
+  font-weight: 100;
+}
+.btn-search {
+  width: 50px;
+  height: 50px;
+  border-style: none;
+  font-size: 20px;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-radius: 50%;
+  position: absolute;
+  right: 0px;
+  color: #fff;
+  background-color: transparent;
+  pointer-events: painted;
+}
+.btn-search:focus ~ .input-search {
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+.input-search:focus {
+  width: 300px;
+  border-radius: 0px;
+  background-color: transparent;
+  border-bottom: 1px solid rgba(255, 255, 255, .5);
+  transition: all 500ms cubic-bezier(0, 0.11, 0.35, 2);
+}
+
+
+
+/* ******************************* Home ******************************** */
+.home{
+  color: white;
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+}
+.home>i{
+  position: absolute;
+  right: 5%;
+  top: 20%;
+  font-size: 25px;
+}
+.home video{
+  width: 100%;
+  height: 100%;
+  object-fit:cover ;
+  
+}
+.desc{
+  position: absolute;
+  width: 50%;
+  letter-spacing: 1px;
+  top: 50%;
+  left: 5%;
+}
+
+.desc h1{
+  font-size: 40px;
+  font-weight: 800;
+}
+.desc p{
+  margin: 8px 0px 15px;
+}
+.desc button{
+  font-size: 20px;
+  padding: 8px 25px;
+  background-color: #f0f8ff;
+  border: none;
+  outline: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.desc button:last-child{
+  background-color: rgb(96, 96, 96);
+  color: white;
+}
+
+
+/* ******************************* Movie Card ********************************************** */
+.wrapper{
+  width:100%;
+  height:100%;
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0px 10px;
+  column-gap: 10px;
+  row-gap: 50px;
+}
+
+.card{
+  width: 200px;
+  height: 250px;
+  background: #fff;
+  border: 2px solid #fff;
+  box-shadow: 0px 4px 7px rgba(0,0,0,.5);
+  cursor: pointer;
+  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+  overflow: hidden;
+  position: relative;
+}
+
+.card img{
+  width: 100%;
+  height:100%;
+  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+}
+.descriptions{
+  position: absolute;
+  top:0px;
+  left:0px;
+  background-color: rgba(0, 0, 0, 0.642);
+  width:100%;
+  height:100%;
+  transition: all .7s ease-in-out;
+  padding: 20px;
+  box-sizing: border-box;
+  clip-path: circle(0% at 100% 100%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.card:hover .descriptions{
+  left:0px;
+  transition: all .7s ease-in-out;
+  clip-path: circle(75%);
+}
+.card:hover{
+  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+  box-shadow: 0px 2px 3px rgba(0,0,0,.3);
+}
+.card:hover img{
+  transition: all .5s cubic-bezier(.8,.5,.2,1.4);
+  transform: scale(1.2);
+  filter: blur(2px);
+}
+.card h1{
+  color: #ff3838;
+  letter-spacing: 1px;
+  margin: 0px;
+}
+.card p{
+  font-size: 12px;
+  color: white;
+}
+.test{
+  color:white;
+  font-size: 30px;
+  margin: 20px 0px;
+}
+
+/* ************************Add Movie********************** */
+.add_movie{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.42);
+  position: fixed;
+  z-index: 99;
+}
+.modal.show {
+  display: block;
+}
+@keyframes modal-show {
+  from {
+    transform: translate(-50%, -200%) scale(0);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+.box_modal{
+  width: 600PX;
+  height: 500px;
+  background-color: #202020;
+  border-radius: 10px;
+  padding: 30px 50px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: white;
+  position: fixed;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: modal-show 0.6s forwards;
+}
+.box_modal h1{
+  color: red;
+  font-size: 30px;
+}
+.box_modal i{
+  font-size: 20px;
+  margin: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  padding: 10px 13px;
+  border-radius: 50%;
+}
+.box_modal i:hover{
+  color: red;
+  padding: 10px 13px;
+}
+.box_modal input{
+  font-size: 20px;
+  padding: 5px 10px;
+  border: none;
+  outline: none;
+}
+.box_modal button{
+  width: 120px;
+  height: 40px;
+  margin: 0 auto;
+  font-size: 23px;
+  padding: 10px 15px;
+  margin-top: 16px;
+  background-color: rgb(103, 102, 102);
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box_modal button:hover{
+  background-color: red;
+}
+
+
+/* ****************************** Movie Modal **************************** */
+
+.movie_modal{
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.423);
+  position: fixed;
+  z-index: 999;
+  top: 0;
+  left: 0;
+}
+.box_movie_modal{
+  width: 800PX;
+  height: 400px;
+  background-color: #202020;
+  border-radius: 10px;
+  display: flex;
+  gap: 30px;
+  color: white;
+  position: fixed;
+  padding: 25px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(0);
+  animation: modal-movie-show 0.4s forwards;
+}
+@keyframes modal-movie-show {
+  from {
+    transform: translate(-50%, -50%) scale(0.5);
+  }
+  to {
+    transform: translate(-50%, -50%) scale(1);
+  }
+}
+.box_movie_modal img{
+  width: 270px;
+  height: 100%;
+  border-radius: 5px;
+}
+.box_movie_modal>i{
+  font-size: 20px;
+  margin: 20px;
+  position: absolute;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  padding: 10px 13px;
+  border-radius: 50%;
+  z-index: 99;
+}
+.box_movie_modal >i:hover{
+  color: red;
+  padding: 10px 13px;
+}
+.content h3{
+  font-weight: 100;
+  font-size: 15px;
+}
+.content h1{
+  margin: 5px 0px 25px;
+  color: red;
+}
+.content p{
+  width: 350px;
+  font-size: 22px;
+}
+.down{
+  display: flex ;
+  align-items: center;
+  gap: 220px;
+  position: absolute;
+  bottom: 6%;
+}
+.down button{
+  margin: 0 auto;
+  font-size: 16px;
+  padding: 10px 15px;
+  background-color: rgb(103, 102, 102);
+  color: white;
+  border-radius: 30px;
+  cursor: pointer;
+  border: none;
+}
+.down button:hover{
+  background-color: red;
+}
